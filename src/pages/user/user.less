@@ -1,0 +1,505 @@
+/* pages/user/user.wxss */
+/* pages/user/user.wxss */
+.container-user {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // padding-top: calc(44px + env(safe-area-inset-bottom));
+  // padding-top: calc(44px + constant(safe-area-inset-bottom));
+  :deep(.nav-title) {
+    border-bottom-width: 0px;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+  }
+}
+page {
+  background-color: #f7f7f7;
+}
+
+/* #ifdef MP-WEIXIN */
+page::after {
+  content: ' ';
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rpx;
+  background-color: #e7e7e7;
+  z-index: 9999;
+  top: auto;
+}
+
+/* #endif */
+
+/* 用户信息 */
+.userinfo {
+  color: #333;
+  background: url('https://b0.dtminds.com/1/2023/01/31/2a7a2609-01d6-41de-b1b3-301767618528.png') 0
+    0 no-repeat;
+  background-size: 100% auto;
+}
+
+.member-info {
+  padding: 24rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #333;
+  // background-color: #FE2E57;
+
+  .head-portrait {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+
+    .user-avatar {
+      display: block;
+      border-radius: 50%;
+      width: 100rpx;
+      height: 100rpx;
+      border: 4rpx solid #fff;
+    }
+
+    .tip {
+      font-size: 24rpx;
+      line-height: 40rpx;
+      margin: 2rpx 4rpx 0;
+      display: inline-block;
+      color: #ddd;
+    }
+  }
+
+  .text-box {
+    margin: 0 0 0 20rpx;
+    flex: 1;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120rpx;
+    .text-box-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100rpx;
+    }
+    .sign-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30rpx;
+      border: 1rpx solid #d3d3d3;
+      line-height: 34rpx;
+      color: #999999;
+      font-weight: 400;
+      font-size: 24rpx;
+      letter-spacing: 2px;
+      height: 48rpx;
+      padding: 4rpx 20rpx;
+      image {
+        width: 38rpx;
+        height: 38rpx;
+        object-fit: cover;
+        margin-right: 10rpx;
+      }
+    }
+  }
+
+  .text-box .main-name {
+    font-weight: 400;
+    font-size: 32rpx;
+    line-height: 40rpx;
+    max-width: 300rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .text-box .main-des {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    max-width: 300rpx;
+    margin-top: 14rpx;
+    color: #999999;
+  }
+
+  .text-box .submain {
+    font-size: 28rpx;
+    // margin-top: 10rpx;
+  }
+  .text-box-unlogin {
+    margin-left: 10px;
+    .main {
+      text-align: left;
+    }
+  }
+  .edit-btn {
+    margin-right: 12rpx;
+    width: 172rpx;
+    height: 52rpx;
+    font-size: 24rpx;
+    border-radius: 12px;
+    border: 1px solid #d3d3d3;
+    line-height: 52rpx;
+    color: #acacac;
+  }
+}
+
+/* 钱包数据 */
+.wallet-data {
+  padding: 30rpx 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10rpx 20rpx 0;
+}
+
+.data-item {
+  position: relative;
+  font-size: 26rpx;
+}
+
+.four-item .data-item {
+  width: 25%;
+}
+
+.three-item .data-item {
+  width: 33%;
+}
+
+.data-num {
+  font-size: 44rpx;
+  margin-bottom: 12rpx;
+  text-align: center;
+  font-family: Akrobat-Bold, Akrobat;
+  font-weight: bold;
+  &-wrap {
+    font-size: 28rpx;
+  }
+  image {
+    width: 38rpx;
+    height: 38rpx;
+  }
+}
+
+.data-name {
+  text-align: center;
+  font-size: 24rpx;
+  color: #333;
+}
+
+/* 上标 */
+.dot,
+.point {
+  margin-left: 4rpx;
+}
+
+/* 点 */
+.point {
+  display: inline-block;
+  height: 10rpx;
+}
+
+/* 钱包数据 end */
+
+.list-cont {
+  margin-top: 8rpx;
+}
+
+.list-cont .total-order .order-tit {
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.list-cont .total-order .order-tit .checkmore {
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.list-cont .total-order .procedure {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 22rpx;
+  height: 160rpx;
+}
+
+.list-cont .total-order .procedure .items {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  color: #333;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+/* .list-cont .total-order .procedure .items.refund-icon > image {
+  width: 55rpx;
+  height: 55rpx;
+} */
+
+.list-cont .total-order .procedure .items image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.list-cont .total-order .procedure .items .num-badge {
+  position: absolute;
+  top: -18rpx;
+  left: 88rpx;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 28rpx;
+  background: #f52e57;
+  min-width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  padding: 2rpx;
+  display: block;
+}
+
+/* end 订单状态 */
+
+/* 列表项 */
+
+.list-cont .my-menu .memu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  padding: 0 24rpx;
+}
+
+.list-cont .my-menu .memu-item:last-child {
+  border-bottom: none;
+}
+
+.list-cont .my-menu .memu-item text {
+  font-size: 28rpx;
+}
+
+.list-cont .my-menu .memu-item image {
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 20rpx;
+}
+
+.list-cont .my-menu .memu-item .i-name {
+  display: flex;
+  align-items: center;
+}
+
+/* end 列表项 */
+
+/* start 分销员中心 */
+.list-cont .more {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24rpx;
+  &-title {
+    font-size: 28rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #333333;
+    line-height: 40rpx;
+  }
+  &-right {
+    display: flex;
+    align-items: center;
+    &-des {
+      font-size: 24rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      line-height: 34rpx;
+      margin-right: 4rpx;
+    }
+  }
+}
+.list-cont .line {
+  width: 702rpx;
+  height: 2rpx;
+  background: #f7f7f7;
+  margin-left: 24rpx;
+}
+.list-cont .salesman {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 158rpx;
+  background-color: #ffffff;
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-num {
+      font-size: 32rpx;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #333333;
+      line-height: 44rpx;
+    }
+    &-title {
+      margin-top: 26rpx;
+      font-size: 24rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      line-height: 34rpx;
+    }
+  }
+}
+/* end 分销员中心 */
+
+/* 箭头 */
+
+.arrowhead {
+  width: 36rpx;
+  height: 35rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkBAMAAAATLoWrAAAAG1BMVEVHcEyXl5eYmJiZmZkAAACZmZmZmZmampqamppQcBvCAAAACXRSTlMAQO+PAV//lXAMUiR1AAAAL0lEQVR4AWMYcoBR2QFdiDWtBF2IpSwdQ5k77ZVl4BVCaMQ0nhaKEIGDGYRDEAAA0IgR16tBRrcAAAAASUVORK5CYII=)
+    no-repeat;
+  background-size: 36rpx 35rpx;
+}
+
+/* 商品收藏消息等 */
+.prod-col {
+  margin-top: 20rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx 0 10rpx 0;
+  font-size: 12px;
+}
+
+.prod-col .col-item {
+  text-align: center;
+}
+
+.prod-col .col-item .num {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3a86b9;
+}
+
+.prod-col .col-item .tit {
+  line-height: 34px;
+}
+
+/* 退出登录 */
+.log-out {
+  padding: 20rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.log-out-n {
+  font-size: 30rpx;
+  margin: auto;
+  width: 200rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  color: #ffffff;
+}
+
+button.memu-btn.memu-item {
+  background-color: #fff;
+}
+
+button.memu-btn.memu-item:after {
+  border: 0;
+}
+
+/* 智能问卷 */
+.start-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.start-launch {
+  position: fixed;
+  top: 288rpx;
+  width: 500rpx;
+  height: 380rpx;
+  left: 50%;
+  margin-left: -250rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+}
+
+.survey-inp {
+  height: 200rpx;
+  padding: 20rpx;
+}
+.survey-label {
+  font-size: 36rpx;
+  text-align: left;
+}
+.survey-close {
+  position: absolute;
+  right: 30rpx;
+  top: 0px;
+}
+.survey-input {
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  height: 64rpx;
+  font-size: 34rpx;
+}
+.start-btn {
+  display: inline-block;
+  width: 414rpx;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 72rpx;
+  border-radius: 4rpx;
+}
+.user-logo-content {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60rpx;
+  .logo {
+    width: 26rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+  }
+  .text {
+    font-size: 26rpx;
+    line-height: 30rpx;
+    color: #999;
+  }
+}
+.more-right {
+  &-icon {
+    width: 36rpx;
+    height: 35rpx;
+    background: url(../../static/images/icon/link.png) no-repeat;
+    background-size: 36rpx 35rpx;
+  }
+}

@@ -8,7 +8,11 @@
 </template>
 
 <script>
+import User from '../user/user.vue'
 export default {
+  components: {
+    User
+  },
   data() {
     return {
       title: 'Hello',
